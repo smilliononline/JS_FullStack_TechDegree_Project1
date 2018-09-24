@@ -1,1 +1,1 @@
-# JS_FullStack_TechDegree_Project1
+# TechDegree Project 1
