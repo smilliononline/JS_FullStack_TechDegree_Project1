@@ -5,8 +5,8 @@ var quotes = [
     {quote: "Strive not to be a success, but rather to be of value.", source: "Albert Einstein", citation: "forbes.com", year: "unknown"},
 {quote: "I attribute my success to this: I never gave or took any excuse.", source: "Florence Nightengale", citation: "forbes.com", year: "1933"},
 {quote: "The most difficult thing is the decision to act, the rest is merely tenacity", source: "Amelia Earhart", citation: "forbes.com", year: "unknown"},
-{quote: "We become what we think about.", source: "John Lennon", citation: "forbes.com", year: "1957"},
-{quote: "We become what we think about.", source: "John Lennon", citation: "forbes.com", year: "1957"}
+{quote: "We become what we think about.", source: "Earl Nightengale", citation: "forbes.com", year: "1957"},
+{quote: "Life is 10% what happens to me and 90% of how I react to it.", source: "Charles Swindoll", citation: "forbes.com", year: "2006"}
 ];
 
 var numberOfQuotes = quotes.length;
