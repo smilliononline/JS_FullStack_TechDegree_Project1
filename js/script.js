@@ -1,27 +1,42 @@
 // FSJS - Random Quote Generator
 
 // Create the array of quote objects and name it quotes
-var quotes = [{quote1: "Sample Quote1 -Author, Year"},
-{quote2: "Sample Quote2 -Author, Year"},
-{quote3: "Sample Quote3 -Author, Year"},
-{quote4: "Sample Quote4 -Author, Year"},
-{quote5: "Sample Quote5 -Author, Year"}]
+var quotes = [
+    {quote: "Strive not to be a success, but rather to be of value.", source: "Albert Einstein", citation: "forbes.com", year: "unknown"},
+{quote: "I attribute my success to this: I never gave or took any excuse.", source: "Florence Nightengale", citation: "forbes.com", year: "1933"},
+{quote: "The most difficult thing is the decision to act, the rest is merely tenacity", source: "Amelia Earhart", citation: "forbes.com", year: "unknown"},
+{quote: "We become what we think about.", source: "John Lennon", citation: "forbes.com", year: "1957"},
+{quote: "We become what we think about.", source: "John Lennon", citation: "forbes.com", year: "1957"}
+];
+
+var numberOfQuotes = quotes.length;
+console.log(numberOfQuotes); // tests that we see a random quote via console.
+
 
 
 // Create the getRandomQuuote function and name it getRandomQuote
-function getRandomQuote(array){
-    rand = Math.floor((Math.random()*5)+1);
-    return quotes[rand];
+function getRandomQuote(){ // provides a random quote from quotes array.
+    rand = Math.floor((Math.random()*numberOfQuotes));
+    for (quote in quotes){
+        return quotes[rand];
+    }
 }
 
 
-// Create the printQuote funtion and name it printQuote
+// prints out a random quote
 function printQuote(){
-    print = getRandomQuote();
-    document.getElementById("quote-box")
+    var randomQuote = getRandomQuote();    
+    var htmlStrings = "";
+
+    htmlStrings += "<p class=\"quote\">" + randomQuote.quote + "</p>" + "<p class=\"source\">" + randomQuote.source + "<span class=\"citation\">" + randomQuote.citation + "</span>" + "<span class=\"year\">" + randomQuote.year + "</span>" + "</p>";
+   
+
+    document.getElementById('quote-box').innerHTML = htmlStrings; // writes quote
+    
 }
 
-
+printQuote();
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
