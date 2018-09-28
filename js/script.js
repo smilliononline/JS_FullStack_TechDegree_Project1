@@ -16,7 +16,7 @@ console.log(numberOfQuotes); // tests that we see a random quote via console.
 
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote(){ // provides a random quote from quotes array.
-    rand = Math.floor((Math.random()*numberOfQuotes));
+    rand = Math.floor(Math.random()*numberOfQuotes);
     for (quote in quotes){
         return quotes[rand];
     }
@@ -38,7 +38,27 @@ function printQuote(){
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+var buttonClick = document.getElementById('loadQuote').addEventListener("click", function(){
+    printQuote();
+    colorChange();}, false) // clicks button for new quote
 
+//document.getElementById('loadQuote').addEventListener( "click", colorChange,);
 
+var colors = ["red", "blue", "green", "gray", "black"];
+// array of colors for background
+
+var randColors = function() {
+    return Math.floor(Math.random() * colors.length);
+}; // random color generator
+
+function colorChange() {
+    var index = randColors();
+    var newColor = colors[index];
+    document.querySelector('body').style.backgroundColor = newColor;
     
+}
+
+document.getElementById('loadQuote').addEventListener("click", function(){
+    printQuote();
+    colorChange();
+}, false) // clicks button for new quote
